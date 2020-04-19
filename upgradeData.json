@@ -1,0 +1,7 @@
+[{"Name": "Newspaper Ads", "Description": "It's old fashioned, but it still works.", "Price": 50, "FollowerEffect": 1},
+{"Name": "Internet Ads", "Description": "Hey, you might interest someone who's never heard of Adblockers", "Price": 1000, "FollowerEffect": 0.5, "MoneyEffect": -10, "Global": true},
+{"Name": "Community Giving", "Description": "Charity begins at home.", "Price": 200, "FollowerEffect": 2},
+{"Name": "Tiered Membership", "Description": "Get a bit more cash by convincing your followers that they're superior to each other.", "Price": 1000, "FeeEffect": 0.2, "Global": true},
+{"Name": "TV Ads", "Description": "Your message beamed straight to your potential minio- *ahem*, followers' eyes.", "Price": 10000, "FollowerEffect": 10},
+{"Name": "Fake Assassination Attempt", "Description": "Hey, what works works.", "Price": 30000, "FollowerEffect": 15 },
+{"Name": "Mind Control Tower", "Description": "Bring out the big guns to \"persuade\" people to join your cause.", "Price": 100000, "FollowerEffect": 100}]

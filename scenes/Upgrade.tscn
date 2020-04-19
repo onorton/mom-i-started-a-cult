@@ -1,0 +1,210 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://art/Button_mask.bmp" type="BitMap" id=1]
+[ext_resource path="res://UIFontNormal.tres" type="DynamicFont" id=2]
+[ext_resource path="res://art/Button Disabled.png" type="Texture" id=3]
+[ext_resource path="res://art/Button.png" type="Texture" id=4]
+[ext_resource path="res://art/Money Icon.png" type="Texture" id=5]
+[ext_resource path="res://scripts/UpgradeButton.cs" type="Script" id=6]
+[ext_resource path="res://scripts/Upgrade.cs" type="Script" id=7]
+[ext_resource path="res://art/People Icon.png" type="Texture" id=8]
+[ext_resource path="res://UIFontDescription.tres" type="DynamicFont" id=9]
+[ext_resource path="res://art/uiPanel.png" type="Texture" id=10]
+
+[node name="Upgrade" type="MarginContainer"]
+margin_bottom = 250.0
+rect_min_size = Vector2( 325, 330 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="NinePatchRect" parent="."]
+margin_right = 325.0
+margin_bottom = 330.0
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 63.7841, 63.9746 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+custom_constants/separation = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="Panel/VBoxContainer"]
+margin_right = 250.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 250, 0 )
+size_flags_horizontal = 0
+size_flags_stretch_ratio = 0.0
+custom_fonts/font = ExtResource( 2 )
+text = "Population"
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="Panel/VBoxContainer"]
+margin_top = 46.0
+margin_right = 305.0
+margin_bottom = 136.0
+custom_fonts/font = ExtResource( 9 )
+text = "asdsdasdasdasdasda
+asdasdasd
+asdasdasdasdsdasdassd"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FollowerBenefit" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_top = 140.0
+margin_right = 305.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 0, 40 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="NinePatchRect" parent="Panel/VBoxContainer/FollowerBenefit"]
+margin_bottom = 40.0
+
+[node name="Icon" type="TextureRect" parent="Panel/VBoxContainer/FollowerBenefit/Background"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Amount" type="Label" parent="Panel/VBoxContainer/FollowerBenefit/Background"]
+margin_left = 40.5404
+margin_top = 5.94397
+margin_right = 156.54
+margin_bottom = 43.944
+custom_fonts/font = ExtResource( 9 )
+text = "+10/day"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoneyFollowerRate" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_top = 184.0
+margin_right = 305.0
+margin_bottom = 224.0
+rect_min_size = Vector2( 0, 40 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="NinePatchRect" parent="Panel/VBoxContainer/MoneyFollowerRate"]
+margin_bottom = 40.0
+
+[node name="Icon" type="TextureRect" parent="Panel/VBoxContainer/MoneyFollowerRate/Background"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Amount" type="Label" parent="Panel/VBoxContainer/MoneyFollowerRate/Background"]
+margin_left = 41.0
+margin_top = 6.0
+margin_right = 157.0
+margin_bottom = 38.0
+custom_fonts/font = ExtResource( 9 )
+text = "+10/day"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoneyRate" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_top = 228.0
+margin_right = 305.0
+margin_bottom = 268.0
+rect_min_size = Vector2( 0, 40 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="NinePatchRect" parent="Panel/VBoxContainer/MoneyRate"]
+margin_bottom = 40.0
+
+[node name="Icon" type="TextureRect" parent="Panel/VBoxContainer/MoneyRate/Background"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Amount" type="Label" parent="Panel/VBoxContainer/MoneyRate/Background"]
+margin_left = 41.0
+margin_top = 6.0
+margin_right = 157.0
+margin_bottom = 38.0
+custom_fonts/font = ExtResource( 9 )
+text = "+10/day"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Purchase" type="TextureButton" parent="Panel/VBoxContainer"]
+margin_top = 272.0
+margin_right = 200.0
+margin_bottom = 312.0
+rect_min_size = Vector2( 200, 40 )
+mouse_filter = 1
+size_flags_horizontal = 0
+texture_normal = ExtResource( 4 )
+texture_disabled = ExtResource( 3 )
+texture_click_mask = ExtResource( 1 )
+expand = true
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Price" type="NinePatchRect" parent="Panel/VBoxContainer/Purchase"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Money Icon" type="TextureRect" parent="Panel/VBoxContainer/Purchase/Price"]
+margin_left = -0.49823
+margin_top = 6.10352e-05
+margin_right = 39.5018
+margin_bottom = 40.0001
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Value" type="Label" parent="Panel/VBoxContainer/Purchase/Price"]
+margin_left = 35.0
+margin_right = 70.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 2 )
+text = "20"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

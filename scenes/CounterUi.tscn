@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UIFontLarge.tres" type="DynamicFont" id=1]
+[ext_resource path="res://art/Money Icon.png" type="Texture" id=2]
+
+[node name="Money" type="HBoxContainer"]
+margin_right = 1900.0
+margin_bottom = 64.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="TextureRect" parent="."]
+margin_right = 64.0
+margin_bottom = 67.0
+texture = ExtResource( 2 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Count" type="Label" parent="."]
+margin_left = 68.0
+margin_right = 132.0
+margin_bottom = 67.0
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+custom_fonts/font = ExtResource( 1 )
+text = "10"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rate" type="Label" parent="."]
+margin_left = 136.0
+margin_right = 380.0
+margin_bottom = 67.0
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+custom_fonts/font = ExtResource( 1 )
+text = "(+10/day)"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

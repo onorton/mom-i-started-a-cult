@@ -1,0 +1,252 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scenes/MoneyCounter.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/FollowersCounter.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/Gui.cs" type="Script" id=3]
+[ext_resource path="res://UIFontLarge.tres" type="DynamicFont" id=4]
+[ext_resource path="res://UIFontNormal.tres" type="DynamicFont" id=5]
+[ext_resource path="res://art/Button_mask.bmp" type="BitMap" id=6]
+[ext_resource path="res://art/Button Disabled.png" type="Texture" id=7]
+[ext_resource path="res://art/Button.png" type="Texture" id=8]
+
+[node name="GUI" type="Control"]
+margin_right = 1920.0
+margin_bottom = 1080.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GUI" type="MarginContainer" parent="."]
+margin_right = 1920.0
+margin_bottom = 1000.0
+mouse_filter = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GUI"]
+margin_right = 1920.0
+margin_bottom = 1016.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="GUI/HBoxContainer"]
+margin_right = 500.0
+margin_bottom = 152.0
+rect_min_size = Vector2( 500, 0 )
+size_flags_vertical = 0
+
+[node name="Bars" type="VBoxContainer" parent="GUI/HBoxContainer/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 493.0
+margin_bottom = 145.0
+mouse_filter = 2
+
+[node name="Money" parent="GUI/HBoxContainer/PanelContainer/Bars" instance=ExtResource( 1 )]
+margin_right = 486.0
+margin_bottom = 67.0
+
+[node name="Followers" parent="GUI/HBoxContainer/PanelContainer/Bars" instance=ExtResource( 2 )]
+margin_top = 71.0
+margin_right = 486.0
+margin_bottom = 138.0
+
+[node name="DateContainer" type="PanelContainer" parent="GUI/HBoxContainer"]
+margin_left = 504.0
+margin_right = 860.0
+margin_bottom = 81.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Date" type="Label" parent="GUI/HBoxContainer/DateContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 349.0
+margin_bottom = 74.0
+custom_fonts/font = ExtResource( 4 )
+text = "18 April 2020"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="GUI/HBoxContainer"]
+margin_left = 864.0
+margin_right = 1556.0
+margin_bottom = 1016.0
+mouse_filter = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/HBoxContainer"]
+margin_left = 1560.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+rect_min_size = Vector2( 360, 0 )
+size_flags_vertical = 0
+custom_constants/separation = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="GUI/HBoxContainer/VBoxContainer"]
+margin_right = 360.0
+margin_bottom = 1080.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/HBoxContainer/VBoxContainer/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 353.0
+margin_bottom = 1073.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Upgrades" type="Label" parent="GUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+margin_right = 346.0
+margin_bottom = 67.0
+custom_fonts/font = ExtResource( 4 )
+text = "Upgrades"
+align = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="GUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
+margin_top = 71.0
+margin_right = 346.0
+margin_bottom = 921.0
+rect_min_size = Vector2( 0, 850 )
+size_flags_stretch_ratio = 0.0
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Upgrades" type="VBoxContainer" parent="GUI/HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/ScrollContainer"]
+margin_bottom = 850.0
+size_flags_vertical = 3
+custom_constants/separation = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node2D" type="Node2D" parent="GUI"]
+z_index = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="GUI/Node2D"]
+margin_right = 1905.0
+margin_bottom = 1080.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Victory Screen" type="PanelContainer" parent="GUI/Node2D/CenterContainer"]
+visible = false
+margin_left = 652.0
+margin_top = 340.0
+margin_right = 1252.0
+margin_bottom = 740.0
+rect_min_size = Vector2( 600, 400 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/Node2D/CenterContainer/Victory Screen"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 590.0
+margin_bottom = 390.0
+custom_constants/separation = 20
+
+[node name="Label" type="Label" parent="GUI/Node2D/CenterContainer/Victory Screen/VBoxContainer"]
+margin_right = 580.0
+margin_bottom = 67.0
+custom_fonts/font = ExtResource( 4 )
+text = "Congratulations!"
+align = 1
+valign = 1
+
+[node name="Message" type="Label" parent="GUI/Node2D/CenterContainer/Victory Screen/VBoxContainer"]
+margin_top = 87.0
+margin_right = 580.0
+margin_bottom = 309.0
+custom_fonts/font = ExtResource( 5 )
+text = "Your cult has successfully taken over this patch of the world. Guess you can't do much more than that!
+
+Thanks for playing!"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Start Screen" type="PanelContainer" parent="GUI/Node2D/CenterContainer"]
+margin_left = 652.0
+margin_top = 340.0
+margin_right = 1252.0
+margin_bottom = 740.0
+rect_min_size = Vector2( 600, 400 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/Node2D/CenterContainer/Start Screen"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 593.0
+margin_bottom = 393.0
+custom_constants/separation = 20
+
+[node name="Label" type="Label" parent="GUI/Node2D/CenterContainer/Start Screen/VBoxContainer"]
+margin_right = 586.0
+margin_bottom = 67.0
+custom_fonts/font = ExtResource( 4 )
+text = "Welcome!"
+align = 1
+valign = 1
+
+[node name="Message" type="Label" parent="GUI/Node2D/CenterContainer/Start Screen/VBoxContainer"]
+margin_top = 87.0
+margin_right = 586.0
+margin_bottom = 309.0
+custom_fonts/font = ExtResource( 5 )
+text = "If you ever thought \"Why not start a cult?\" well here's your chance!
+
+Keep the cult alive and convert all of the cities you see to win! "
+align = 1
+valign = 1
+autowrap = true
+
+[node name="CenterContainer" type="CenterContainer" parent="GUI/Node2D/CenterContainer/Start Screen/VBoxContainer"]
+margin_top = 329.0
+margin_right = 586.0
+margin_bottom = 379.0
+
+[node name="Ok" type="TextureButton" parent="GUI/Node2D/CenterContainer/Start Screen/VBoxContainer/CenterContainer"]
+margin_left = 193.0
+margin_right = 393.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 200, 50 )
+mouse_filter = 1
+size_flags_horizontal = 0
+texture_normal = ExtResource( 8 )
+texture_disabled = ExtResource( 7 )
+texture_click_mask = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Value" type="Label" parent="GUI/Node2D/CenterContainer/Start Screen/VBoxContainer/CenterContainer/Ok"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -35.0
+margin_top = -21.0
+margin_right = 35.0
+margin_bottom = 21.0
+custom_fonts/font = ExtResource( 5 )
+text = "OK"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="GUI/Node2D/CenterContainer/Start Screen/VBoxContainer/CenterContainer/Ok" to="GUI" method="OnOkPressed"]
