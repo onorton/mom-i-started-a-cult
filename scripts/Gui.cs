@@ -30,7 +30,7 @@ public class Gui : MarginContainer
 	}
 
 	public void OnMoneyUpdate(double money) {
-		_moneyCounter.Text = Math.Round(money, 2).ToString();
+		_moneyCounter.Text = $"({money.ToString("+0.00;-#.00")})";
 	}
 
 	public void OnDateUpdate(long unixTimeSeconds) {
